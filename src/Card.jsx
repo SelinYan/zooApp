@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import "./Card.css";
 
 const Card = ({ name, likes }) => {
@@ -5,6 +7,9 @@ const Card = ({ name, likes }) => {
 
   return (
     <div className="card">
+      <Link
+        to={`/single/${name}`}
+        style={{ textDecoration: "none", color: "inherit" }}></Link>
       <img src={imageUrl} alt="unsplash random image" />
       <div className="card-content">
         <h2 className="card">{name}</h2>
