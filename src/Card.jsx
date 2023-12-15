@@ -1,11 +1,18 @@
-const Card = () => {
+import "./Card.css";
+
+const Card = ({ name, likes }) => {
+  const imageUrl = `https://source.unsplash.com/400x400/?${name}`;
+
   return (
     <div className="card">
-      <img src="https://source.unsplash.com/random" alt="unsplash random image" />
-      <h2>Title</h2>
+      <img src={imageUrl} alt="unsplash random image" />
+      <div className="card-content">
+        <h2 className="card">{name}</h2>
+        <h2>{likes}</h2>
+      </div>
       <button>close</button>
       <button>-</button>
-      <span className="material-symbols-outlined">mood</span>
+      <span className="material-symbols-outlined">favorite</span>
       <button>+</button>
     </div>
   );
