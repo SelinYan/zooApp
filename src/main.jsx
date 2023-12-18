@@ -1,32 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import App from "./routes/App.jsx";
 import "./index.css";
 import ErrorPage from "./ErrorPage.jsx";
 import CategoryPage from "./routes/CategoryPage.jsx";
 import SinglePage from "./routes/SinglePage.jsx";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/:category",
-    element: <CategoryPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/:category/:itemName",
-    element: <SinglePage />,
-    errorElement: <ErrorPage />,
-  },
-]);
+const Main = () => {
+  return (
+    <Router>
+      <React.StrictMode>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/:category" element={<CategoryPage />} />
+          <Route path="/:category/:itemName" element={<SinglePage />} />
+        </Routes>
+      </React.StrictMode>
+    </Router>
+  );
+};
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
+ReactDOM.createRoot(document.getElementById("root")).render(<Main />);

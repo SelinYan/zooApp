@@ -32,7 +32,7 @@ const CategoryPage = () => {
           <Card
             key={`${item.name}-${index}`}
             name={item.name}
-            likes={item.likes}
+            initialLikes={item.likes}
           />
         ))}
       </div>
