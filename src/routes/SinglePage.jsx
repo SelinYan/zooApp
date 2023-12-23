@@ -1,9 +1,13 @@
+import React from "react";
 import { useParams, useLocation } from "react-router-dom";
+import Header from "../Header";
+import Footer from "../Footer";
 
 const SinglePage = () => {
-  const { category, itemName } = useParams();
+  const { category } = useParams();
   const location = useLocation();
-  const { name, initialLikes, imageUrl } = location.state || {};
+
+  const { name, likes, imageUrl } = location.state || {};
 
   if (!name) {
     return <div>Item not found</div>;
@@ -11,9 +15,11 @@ const SinglePage = () => {
 
   return (
     <div>
+      <Header />
       <h1>{name}</h1>
       <img src={imageUrl} alt="unsplash random image" />
-      <p>Likes: {initialLikes}</p>
+      <p>Likes: {likes}</p>
+      <Footer />
     </div>
   );
 };

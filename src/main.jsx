@@ -14,7 +14,7 @@ const Main = () => {
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/:category" element={<CategoryPage />} />
-          <Route path="/:category/:itemName" element={<SinglePage />} />
+          <Route path="/:category/:name" element={<SinglePage />} />
         </Routes>
       </React.StrictMode>
     </Router>

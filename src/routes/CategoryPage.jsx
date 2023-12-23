@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { animals, birds } from "../animalsList.js";
 import Card from "../Card.jsx";
 import Header from "../Header.jsx";
+import Footer from "../Footer.jsx";
 
 const getCategoryData = (category) => {
   switch (category) {
@@ -33,9 +34,11 @@ const CategoryPage = () => {
             key={`${item.name}-${index}`}
             name={item.name}
             initialLikes={item.likes}
+            category={category}
           />
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
 
-const Card = ({ name, initialLikes }) => {
+const Card = ({ name, initialLikes, category }) => {
   const imageUrl = `https://source.unsplash.com/400x400/?${name}`;
 
   const [likes, setLikes] = useState(initialLikes);
@@ -22,12 +22,12 @@ const Card = ({ name, initialLikes }) => {
     <div className={`card ${isLiked ? "liked" : ""}`}>
       <Link
         to={{
-          pathname: `/single/${name}`,
-          state: {
-            name,
-            initialLikes,
-            imageUrl,
-          },
+          pathname: `/${category}/${name}`,
+        }}
+        state={{
+          name,
+          likes,
+          imageUrl,
         }}
         style={{ textDecoration: "none", color: "inherit" }}>
         <img src={imageUrl} alt="unsplash random image" />

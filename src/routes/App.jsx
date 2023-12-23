@@ -10,12 +10,22 @@ const App = () => {
       <main>
         <div className="card-container">
           {animals.map((item) => (
-            <Card key={item.name} name={item.name} likes={item.likes} />
+            <Card
+              key={item.name}
+              name={item.name}
+              initialLikes={item.likes}
+              category={"animals"}
+            />
           ))}
         </div>
         <div className="card-container">
           {birds.map((item) => (
-            <Card key={item.name} name={item.name} likes={item.likes} />
+            <Card
+              key={item.name}
+              name={item.name}
+              initialLikes={item.likes}
+              category={"birds"}
+            />
           ))}
         </div>
       </main>
