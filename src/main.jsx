@@ -9,7 +9,7 @@ import SinglePage from "./routes/SinglePage.jsx";
 
 const Main = () => {
   return (
-    <Router>
+    <Router basename={import.meta.env.DEV ? "/" : "/zooApp/"}>
       <React.StrictMode>
         <Routes>
           <Route path="/" element={<App />} />
