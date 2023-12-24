@@ -19,7 +19,7 @@ const Card = ({ name, initialLikes, category, onRemove }) => {
   };
 
   const handleRemove = () => {
-    onRemove(name);
+    onRemove(name, category);
   };
 
   return (

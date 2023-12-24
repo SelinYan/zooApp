@@ -23,24 +23,24 @@ const App = () => {
       <Header />
       <main>
         <div className="card-container">
-          {animals.map((item) => (
+          {animalsData.map((item) => (
             <Card
               key={item.name}
               name={item.name}
               initialLikes={item.likes}
               category={"animals"}
-              onRemove={() => handleRemoveCard(item.name, "animals")}
+              onRemove={handleRemoveCard}
             />
           ))}
         </div>
         <div className="card-container">
-          {birds.map((item) => (
+          {birdsData.map((item) => (
             <Card
               key={item.name}
               name={item.name}
               initialLikes={item.likes}
               category={"birds"}
-              onRemove={() => handleRemoveCard(item.name, "birds")}
+              onRemove={handleRemoveCard}
             />
           ))}
         </div>
