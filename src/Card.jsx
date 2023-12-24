@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
 
-const Card = ({ name, initialLikes, category }) => {
+const Card = ({ name, initialLikes, category, onRemove }) => {
   const imageUrl = `https://source.unsplash.com/400x400/?${name}`;
 
   const [likes, setLikes] = useState(initialLikes);
@@ -16,6 +16,10 @@ const Card = ({ name, initialLikes, category }) => {
   const handleDecrement = () => {
     if (likes > 0) setLikes(likes - 1);
     setIsLiked(false);
+  };
+
+  const handleRemove = () => {
+    onRemove(name);
   };
 
   return (
@@ -40,13 +44,15 @@ const Card = ({ name, initialLikes, category }) => {
           )}
         </div>
       </Link>
+      <button className="close-button" onClick={handleRemove}>
+        X
+      </button>
       <button onClick={handleDecrement}>-</button>
       <span className={`material-symbols ${isLiked ? "liked" : ""}`}>
         {isLiked ? "❤️" : "🤍"}
       </span>
 
       <button onClick={handleIncrement}>+</button>
-      <button>close</button>
     </div>
   );
 };

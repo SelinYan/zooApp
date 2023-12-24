@@ -17,6 +17,23 @@
     }
   }
   
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: white;
+  border: none;
+  border-radius: 10%;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+
+  &:hover {
+    background-color: #888;
+  }
+}
+
 .card img {
     width: 100%;
     border-radius: 4px;

@@ -20,6 +20,12 @@ const CategoryPage = () => {
   const { category } = useParams();
   const [categoryData, setCategoryData] = useState(getCategoryData(category));
 
+  const handleRemoveCard = (name) => {
+    setCategoryData((prevData) =>
+      prevData.filter((item) => item.name !== name)
+    );
+  };
+
   useEffect(() => {
     setCategoryData(getCategoryData(category));
   }, [category]);
@@ -35,6 +41,7 @@ const CategoryPage = () => {
             name={item.name}
             initialLikes={item.likes}
             category={category}
+            onRemove={handleRemoveCard}
           />
         ))}
       </div>
