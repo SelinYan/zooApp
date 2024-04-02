@@ -19,3 +19,31 @@ body {
   min-height: 100vh;
 }
 
+h2 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.big-image-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.big-image-links img{
+  width: 300px;
+  height: auto;
+  border: 5px solid;
+  border-image: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  border-image-slice: 1;
+  transition: filter 0.3s ease;
+}
+
+.big-image-links img:hover {
+  filter: brightness(70%); 
+}
+
+.big-image-links img:last-child {
+  margin-right: 50px;
+}
+

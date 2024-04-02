@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, useLocation } from "react-router-dom";
-import Header from "../Header";
-import Footer from "../Footer";
+import Header from "../component/Header";
+import Footer from "../component/Footer";
 
 const SinglePage = () => {
   const { category } = useParams();

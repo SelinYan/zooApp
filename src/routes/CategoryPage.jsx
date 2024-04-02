@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { animals, birds } from "../animalsList.js";
-import Card from "../Card.jsx";
-import Header from "../Header.jsx";
-import Footer from "../Footer.jsx";
+import Card from "../component/Card.jsx";
+import Header from "../component/Header.jsx";
+import Footer from "../component/Footer.jsx";
 
 const getCategoryData = (category) => {
   switch (category) {
