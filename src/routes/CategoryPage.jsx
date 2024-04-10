@@ -19,11 +19,8 @@ const getCategoryData = (category) => {
 const CategoryPage = () => {
   const { category } = useParams();
   const [categoryData, setCategoryData] = useState(getCategoryData(category));
-
   const handleRemoveCard = (name) => {
-    setCategoryData((prevData) =>
-      prevData.filter((item) => item.name !== name)
-    );
+    setCategoryData(categoryData.filter((item) => item.name !== name));
   };
 
   useEffect(() => {
