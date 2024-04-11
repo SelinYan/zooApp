@@ -16,7 +16,7 @@ const SinglePage = () => {
   return (
     <div>
       <Header />
-      <h1>{name}</h1>
+      <h2>{name}</h2>
       <img src={imageUrl} alt="unsplash random image" />
       <p>Likes: {likes}</p>
       <Footer />
