@@ -1,30 +1,22 @@
 # Zoo App
 
-Welcome to the Zoo App! This application allows users to explore a vast collection of books, read details about each book, and search book.
+Welcome to the Zoo App! This project is a simple zoo app built with React that allows users to view, search, and like for animals and birds.
 
-Demo: https://wen-books.netlify.app
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/892d8973-ba48-469a-b39a-4f8133d87043/deploy-status?branch=main)](https://app.netlify.com/sites/wen-bookapp/deploys)
+Demo: https://selinyan.github.io/zooApp/
 
 # Features
 
-- Browse Books: Explore a diverse selection of books covering various genres, authors, and topics.
-- Search: Easily search for specific books by title, author, or genre.
-- Book Details: View detailed information about each book, including its cover image, author, genres, description, and ratings.
-- Interactive Experience: Enjoy a user-friendly interface that makes it easy to navigate through the app and discover new books.
-- Responsive Design: Access the app seamlessly on desktop, tablet, and mobile devices.
+- Display animals and birds based on selected categories.
+- Search functionality to filter animals and birds by name.
+- View detailed information about a single animal or bird.
 
 # Technologies Used
 
-- React: The app is built using React, a popular JavaScript library for building user interfaces.
-
-- React Router: Utilized for handling navigation and routing within the application.
-
-- Axios: Used for making HTTP requests to fetch book data from the server.
-
-- Material-UI: Employed for designing the user interface with pre-built React components and styles.
-
-- Lottie: Integrated for adding animations to enhance the user experience.
+- React
+- React Router
+- JavaScript (ES6+)
+- HTML5
+- CSS3
 
 # Setup
 
@@ -44,13 +36,7 @@ or
 
 `$ yarn install`
 
-4. Start the Local Server: Start the local server to serve the books data. Run the following command:
-
-`$ npm run server`
-
-This command will start a local server at http://localhost:3000/books to serve the books data.
-
-5. Start the Development Server: Run the following command to start the development server:
+4. Start the Development Server: Run the following command to start the development server:
 
 `$ npm run dev`
 
@@ -58,7 +44,7 @@ or
 
 `$ yarn run dev`
 
-6. Open the App: Once the localhost link is rendered, press command and click into the link to view the Book App.
+5. Open the App: Once the localhost link is rendered, press command and click into the link to view the Zoo App.
 
 # Contributing
 
