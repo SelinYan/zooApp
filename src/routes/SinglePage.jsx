@@ -16,9 +16,11 @@ const SinglePage = () => {
   return (
     <div>
       <Header />
-      <h2>{name}</h2>
-      <img src={imageUrl} alt="unsplash random image" />
-      <p>Likes: {likes}</p>
+      <div className="single-card">
+        <h2>{name}</h2>
+        <img src={imageUrl} alt="unsplash random" />
+        <p>Likes: {likes}</p>
+      </div>
       <Footer />
     </div>
   );

@@ -52,11 +52,7 @@ const CategoryPage = () => {
             onChange={handleSearchChange}
             className="search-input"
           />
-          <img
-            src="/public/search-svgrepo-com.png"
-            alt="Search"
-            className="search-icon"
-          />
+          <span className="material-symbols-outlined">search</span>
         </div>
       </div>
       <div className="card-container">
