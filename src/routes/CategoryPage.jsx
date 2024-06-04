@@ -47,12 +47,11 @@ const CategoryPage = () => {
         <div className="search-input-container">
           <input
             type="text"
-            placeholder="Search by name.."
+            placeholder="&#x1F50D;Search by name.."
             value={searchQuery}
             onChange={handleSearchChange}
             className="search-input"
           />
-          <span className="material-symbols-outlined">search</span>
         </div>
       </div>
       <div className="card-container">
