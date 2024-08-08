@@ -1,12 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "./Card.css";
 
 const Card = ({ name, initialLikes, category, onRemove }) => {
-  const imageUrl = `https://source.unsplash.com/400x400/?${name}`;
-
+  const [imageUrl, setImageUrl] = useState("");
   const [likes, setLikes] = useState(initialLikes);
   const [isLiked, setIsLiked] = useState(false);
+
+  // API key for Pexels
+  const API_KEY = "MRVkRr0gOoCdwg8QfS0nbX6VNIjocapxF6zVMnD8bod48w6eQoIu5Qst";
+
+  useEffect(() => {
+    // Fetch image from Pexels
+    const fetchImage = async () => {
+      try {
+        const response = await axios.get(`https://api.pexels.com/v1/search`, {
+          headers: {
+            Authorization: API_KEY,
+          },
+          params: {
+            query: name,
+            per_page: 1,
+            orientation: "square",
+          },
+        });
+        if (response.data.photos.length > 0) {
+          setImageUrl(response.data.photos[0].src.medium); // Use the medium-sized image
+        } else {
+          setImageUrl("https://via.placeholder.com/400"); // Fallback if no image is found
+        }
+      } catch (error) {
+        console.error("Error fetching image from Pexels:", error);
+        setImageUrl("https://via.placeholder.com/400"); // Fallback if error occurs
+      }
+    };
+
+    fetchImage();
+  }, [name]);
 
   const handleIncrement = () => {
     setLikes(likes + 1);
@@ -24,21 +55,18 @@ const Card = ({ name, initialLikes, category, onRemove }) => {
   };
 
   return (
-    // Using a dynamic className allows for conditional styling based on the state of the component
     <div className={`card ${isLiked ? "liked" : ""}`}>
       <Link
-        //navigate to URL path
         to={{
           pathname: `/${category}/${name}`,
         }}
-        //pass additional state data along with the URL when navigating,what it shows in single page
         state={{
           name,
           likes,
           imageUrl,
         }}
         style={{ textDecoration: "none", color: "inherit" }}>
-        <img src={imageUrl} alt="unsplash random image" />
+        <img src={imageUrl} alt={name} />
         <div className="card-content">
           <h2 className="card">{name}</h2>
           {likes > 0 && (
@@ -55,7 +83,6 @@ const Card = ({ name, initialLikes, category, onRemove }) => {
       <span className={`material-symbols ${isLiked ? "liked" : ""}`}>
         {isLiked ? "❤️" : "🤍"}
       </span>
-
       <button onClick={handleIncrement}>+</button>
     </div>
   );
